@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Crystals Collector Game by Douglas McCandless</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	</head>
+	<body>
+
+		<header id="banner"><h1>Crystals Collector</h1></header>
+
+		<section>
+			<div id="instructions">
+				<p>You will be given a random number at the start of the game.</p>
+				<p>There are four crystals below.  By clicking on a crystal you<br>
+					will add a specific amount of points to your total score.</p>
+				<p>You win the game by matching your total score to the random<br>
+					number, you lose the game if your total score goes above<br>
+					the random number.</p>
+				<p>The value of each crystal is hidden from you until you<br>
+					click on it.</p>
+				<p>Each time the game starts, the game will change the<br>
+					values of each crystal.</p>
+			</div>
+			<div id="numGenerated"><h2>39</h2></div>
+			<div id="winsLosses"><ul><li>Wins:  </li>
+										<li>Losses:  </li>
+									</ul>
+			</div>
+			<div id="gemButtons">
+				<ul>
+					<li><button id="rubyButton"><img src="#" alt="ruby button"></button></li>
+					<li><button id="diamondButton"><img src="#" alt="diamond button"></button></li>
+					<li><button id="yellowGemButton"><img src="#" alt="yellowGem button"></button></li>
+					<li><button id="emeraldButton"><img src="#" alt="emerald button"></button></li>
+				</ul>
+			</div>
+			<div id="scoreHeader"><h4>Your total score is: </h4></div>
+			<div id="sumNumsEntered"><h2>14</h2></div>
+		</section>
+
+
+
+		<script
+		  src="https://code.jquery.com/jquery-3.3.1.min.js"
+		  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		  crossorigin="anonymous"></script>
+		<script type="text/javascript" src="assets/javascript/game.js"></script>
+	</body>
+</html>

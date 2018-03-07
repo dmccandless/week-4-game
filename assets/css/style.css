@@ -1,0 +1,54 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+	width: 1024px;
+	background-image: url("../images/circles-light.png");
+}
+
+div{
+	outline: 1px solid blue;
+}
+
+#banner{
+	width: 30%;
+	color: white;
+	background-color: #5B5F97; /*purple*/
+}
+
+#instructions{
+	width: 50%;
+	background-color: #FFC145; /*ochre*/
+	color: black;
+}
+
+#numGenerated{
+	width: 20%;
+	background-color: #FF6B6C;
+	color: white;
+}
+
+#winsLosses{
+	width: 10%;
+	background-color: #B8B8D1;
+	color: white;
+}
+
+#gemButtons{
+	width: 40%;
+	background-color: #FFFFFB; /*off-white*/
+}
+
+#scoreHeader{
+	width: 25%;
+	background-color: #5B5F97;
+	color: white;
+}
+
+#sumNumsEntered{
+	width: 25%;
+	background-color: #5B5F97;
+	color: white;
+}
+
