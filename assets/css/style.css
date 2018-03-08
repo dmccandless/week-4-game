@@ -44,11 +44,51 @@ div{
 	width: 25%;
 	background-color: #5B5F97;
 	color: white;
+	clear: both;
 }
 
 #sumNumsEntered{
 	width: 25%;
 	background-color: #5B5F97;
 	color: white;
+}
+
+#rubyButton{
+	padding: 5px;
+	background-color: red;
+	color: white;
+	float: left;
+	margin-right: 3px;
+	cursor: pointer;
+}
+
+#diamondButton{
+	padding: 5px;
+	background-color: blue;
+	color: white;
+	float: left;
+	margin-right: 3px;
+	cursor: pointer;
+}
+
+#topazButton{
+	padding: 5px;
+	background-color: yellow;
+	color: black;
+	float: left;
+	margin-right: 3px;
+	cursor: pointer;
+}
+
+#emeraldButton{
+	padding: 5px;
+	background-color: green;
+	color: white;
+	float: left;
+	cursor: pointer;
+}
+
+#gemButtonsRow{
+	display: inline;
 }
 
