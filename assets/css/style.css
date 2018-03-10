@@ -5,10 +5,24 @@
 body{
 	width: 1024px;
 	background-image: url("../images/circles-light.png");
+	font-size: 18px;
+	font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.content-entire{
+	max-width: 960px;
+	width: 100%;
+	margin: 0 auto;
+	clear: both;
 }
 
 div{
 	outline: 1px solid blue;
+	margin: 10px 0;
+}
+
+p{
+	margin: 10px;
 }
 
 #banner{
