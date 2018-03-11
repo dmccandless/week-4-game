@@ -1,27 +1,29 @@
 $(document).ready(function(){
 
 	$("#rubyButton").click(function(){
-		crystalsGame.ruby;
+		crystalsGame.ruby();
 	});
 	
 
 	$("#diamondButton").click(function(){
-		crystalsGame.diamond;
+		crystalsGame.diamond();
 	});
 	
 
 	$("#topazButton").click(function(){
-		crystalsGame.topaz;
+		crystalsGame.topaz();
 	});
 	
 
 	$("#emeraldButton").click(function(){
-		crystalsGame.emerald;
+		crystalsGame.emerald();
 	});
+
+	crystalsGame.setInitValues();
 	
 });
 
-var gameRunning = false;
+//var gameRunning = false;
 
 
 var crystalsGame = {
@@ -56,19 +58,19 @@ var crystalsGame = {
 
 	setInitValues: function(){
 
-		gameRunning = true;
+		//gameRunning = true;
 
 		crystalsGame.targetSum = Math.floor(Math.random() * 101) + 19;
-		console.log(targetSum);
+		console.log(crystalsGame.targetSum);
 
 		crystalsGame.valueAddFromRuby = Math.floor(Math.random() * 12) + 1;
-		console.log(valueAddToRuby);
+		console.log(crystalsGame.valueAddFromRuby);
 		crystalsGame.valueAddFromDiamond = Math.floor(Math.random() * 12) + 1;
-		console.log(valueAddToDiamond);
+		console.log(crystalsGame.valueAddFromDiamond);
 		crystalsGame.valueAddFromTopaz = Math.floor(Math.random() * 12) + 1;
-		console.log(valueAddToTopaz);
+		console.log(crystalsGame.valueAddFromTopaz);
 		crystalsGame.valueAddFromEmerald = Math.floor(Math.random() * 12) + 1;
-		console.log(valueAddToEmerald);
+		console.log(crystalsGame.valueAddFromEmerald);
 
 		$("#numGenerated").text(crystalsGame.targetSum);
 
@@ -78,18 +80,22 @@ var crystalsGame = {
 
 	ruby: function(){
 		crystalsGame.playerSum += crystalsGame.valueAddFromRuby;
+		$("#sumNumsEntered").text(crystalsGame.playerSum);
 	},
 
 	diamond: function(){
 		crystalsGame.playerSum += crystalsGame.valueAddFromDiamond;
+		$("#sumNumsEntered").text(crystalsGame.playerSum);
 	},
 
 	topaz: function(){
 		crystalsGame.playerSum += crystalsGame.valueAddFromTopaz;
+		$("#sumNumsEntered").text(crystalsGame.playerSum);
 	},
 
 	emerald: function(){
 		crystalsGame.playerSum += crystalsGame.valueAddFromEmerald;
+		$("#sumNumsEntered").text(crystalsGame.playerSum);
 	},
 
 	determineContest: function(tSum, pSum){
@@ -111,7 +117,7 @@ var crystalsGame = {
 	wrapUpGame: function(){
 		$("#winsCounted").text(crystalsGame.winsCounter);
 		$("#lossesCounted").text(crystalsGame.lossesCounter);
-		gameRunning = false;
+		//gameRunning = false;
 	}
 
 }; //end of crystalsGame object
