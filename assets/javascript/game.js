@@ -23,7 +23,6 @@ $(document).ready(function(){
 	
 });
 
-//var gameRunning = false;
 
 
 var crystalsGame = {
@@ -43,9 +42,6 @@ var crystalsGame = {
 		crystalsGame.targetSum = 0;
 		crystalsGame.playerSum = 0;
 
-		//crystalsGame.winsCounter = 0;
-		//crystalsGame.lossesCounter = 0;
-
 		crystalsGame.valueAddFromRuby = 0;
 		crystalsGame.valueAddFromDiamond = 0;
 		crystalsGame.valueAddFromAmber = 0;
@@ -59,8 +55,6 @@ var crystalsGame = {
 	},
 
 	setInitValues: function(){
-
-		//gameRunning = true;
 
 		crystalsGame.targetSum = Math.floor(Math.random() * 101) + 19;
 		console.log(crystalsGame.targetSum);
@@ -104,48 +98,27 @@ var crystalsGame = {
 		crystalsGame.determineContest(crystalsGame.targetSum, crystalsGame.playerSum);
 	},
 
-	/*continueGame: function(){
-
-			$("#rubyButton").click(function(){
-				crystalsGame.ruby();
-			});
-			
-
-			$("#diamondButton").click(function(){
-				crystalsGame.diamond();
-			});
-			
-
-			$("#topazButton").click(function(){
-				crystalsGame.topaz();
-			});
-			
-
-			$("#emeraldButton").click(function(){
-				crystalsGame.emerald();
-			});
-
-	},*/
 
 	determineContest: function(tSum, pSum){
 		if(tSum === pSum){
-		setTimeout(alert("Player Wins"), 2000);
+		$("#sumNumsEntered").text(crystalsGame.playerSum);
+		setTimeout(function(){alert ("Player Wins");}, 2000);
 		crystalsGame.winsCounter++;
 		crystalsGame.wrapUpGame();
 		} else if(tSum < pSum){
-			setTimeout(alert("Player Loses"), 2000);
+			$("#sumNumsEntered").text(crystalsGame.playerSum);
+			setTimeout(function(){alert ("Player Loses");}, 2000);
 			crystalsGame.lossesCounter++;
 			crystalsGame.wrapUpGame();
 		} else {
-			//crystalsGame.continueGame();
+			//I don't like having an empty branch here, but it works.
 		}
-	//note: continueGame() is a placeholder function
 
 	},
 
 	wrapUpGame: function(){
-		$("#winsCounted").text(crystalsGame.winsCounter);
-		$("#lossesCounted").text(crystalsGame.lossesCounter);
+		$("#winsCounted").text("Wins: " + crystalsGame.winsCounter);
+		$("#lossesCounted").text("Losses: " + crystalsGame.lossesCounter);
 		setTimeout(crystalsGame.resetInitValues, 2000);
 	}
 
