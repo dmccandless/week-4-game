@@ -43,16 +43,18 @@ var crystalsGame = {
 		crystalsGame.targetSum = 0;
 		crystalsGame.playerSum = 0;
 
-		crystalsGame.winsCounter = 0;
-		crystalsGame.lossesCounter = 0;
+		//crystalsGame.winsCounter = 0;
+		//crystalsGame.lossesCounter = 0;
 
 		crystalsGame.valueAddFromRuby = 0;
 		crystalsGame.valueAddFromDiamond = 0;
 		crystalsGame.valueAddFromTopaz = 0;
 		crystalsGame.valueAddFromEmerald = 0;
 
-		$("#numGenerated").text("");
-		$("#sumNumsEntered").text("");
+		$("#numGenerated").text("0");
+		$("#sumNumsEntered").text("0");
+
+		setTimeout(crystalsGame.setInitValues, 2000);
 
 	},
 
@@ -81,34 +83,61 @@ var crystalsGame = {
 	ruby: function(){
 		crystalsGame.playerSum += crystalsGame.valueAddFromRuby;
 		$("#sumNumsEntered").text(crystalsGame.playerSum);
+		crystalsGame.determineContest(crystalsGame.targetSum, crystalsGame.playerSum);
 	},
 
 	diamond: function(){
 		crystalsGame.playerSum += crystalsGame.valueAddFromDiamond;
 		$("#sumNumsEntered").text(crystalsGame.playerSum);
+		crystalsGame.determineContest(crystalsGame.targetSum, crystalsGame.playerSum);
 	},
 
 	topaz: function(){
 		crystalsGame.playerSum += crystalsGame.valueAddFromTopaz;
 		$("#sumNumsEntered").text(crystalsGame.playerSum);
+		crystalsGame.determineContest(crystalsGame.targetSum, crystalsGame.playerSum);
 	},
 
 	emerald: function(){
 		crystalsGame.playerSum += crystalsGame.valueAddFromEmerald;
 		$("#sumNumsEntered").text(crystalsGame.playerSum);
+		crystalsGame.determineContest(crystalsGame.targetSum, crystalsGame.playerSum);
 	},
 
+	/*continueGame: function(){
+
+			$("#rubyButton").click(function(){
+				crystalsGame.ruby();
+			});
+			
+
+			$("#diamondButton").click(function(){
+				crystalsGame.diamond();
+			});
+			
+
+			$("#topazButton").click(function(){
+				crystalsGame.topaz();
+			});
+			
+
+			$("#emeraldButton").click(function(){
+				crystalsGame.emerald();
+			});
+
+	},*/
+
 	determineContest: function(tSum, pSum){
-		if(pSum === tSum){
+		if(tSum === pSum){
 		alert("Player Wins");
 		crystalsGame.winsCounter++;
 		crystalsGame.wrapUpGame();
-		} else if(pSum > tSum){
+		} else if(tSum < pSum){
 			alert("Player Loses");
 			crystalsGame.lossesCounter++;
 			crystalsGame.wrapUpGame();
 		} else {
-			continueGame();
+			//crystalsGame.continueGame();
 		}
 	//note: continueGame() is a placeholder function
 
@@ -117,14 +146,12 @@ var crystalsGame = {
 	wrapUpGame: function(){
 		$("#winsCounted").text(crystalsGame.winsCounter);
 		$("#lossesCounted").text(crystalsGame.lossesCounter);
-		//gameRunning = false;
+		setTimeout(crystalsGame.resetInitValues, 2000);
 	}
 
 }; //end of crystalsGame object
 
 
 
-//$("#sumNumsEntered").text(crystalsGame.playerSum);
-
-//Do we need to have crystal value displayed on each crystal when presssed?
+//Do we need to have crystal value displayed on each crystal when presssed?  Per the assignment video, apparently not.
 
