@@ -25,6 +25,11 @@ p{
 	margin: 10px;
 }
 
+img{
+	width: 50px;
+	height: 75px;
+}
+
 #banner{
 	width: 30%;
 	color: white;
@@ -69,8 +74,8 @@ p{
 
 #rubyButton{
 	padding: 5px;
-	background-color: red;
-	color: white;
+	/*background-color: red;
+	color: white;*/
 	float: left;
 	margin-right: 3px;
 	cursor: pointer;
@@ -78,17 +83,17 @@ p{
 
 #diamondButton{
 	padding: 5px;
-	background-color: blue;
-	color: white;
+	/*background-color: blue;
+	color: white;*/
 	float: left;
 	margin-right: 3px;
 	cursor: pointer;
 }
 
-#topazButton{
+#amberButton{
 	padding: 5px;
-	background-color: yellow;
-	color: black;
+	/*background-color: yellow;
+	color: black;*/
 	float: left;
 	margin-right: 3px;
 	cursor: pointer;
@@ -96,8 +101,8 @@ p{
 
 #emeraldButton{
 	padding: 5px;
-	background-color: green;
-	color: white;
+	/*background-color: green;
+	color: white;*/
 	float: left;
 	cursor: pointer;
 }

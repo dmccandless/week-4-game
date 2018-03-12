@@ -10,8 +10,8 @@ $(document).ready(function(){
 	});
 	
 
-	$("#topazButton").click(function(){
-		crystalsGame.topaz();
+	$("#amberButton").click(function(){
+		crystalsGame.amber();
 	});
 	
 
@@ -36,7 +36,7 @@ var crystalsGame = {
 
 	valueAddFromRuby: 0,
 	valueAddFromDiamond: 0,
-	valueAddFromTopaz: 0,
+	valueAddFromAmber: 0,
 	valueAddFromEmerald: 0,
 
 	resetInitValues: function(){
@@ -48,7 +48,7 @@ var crystalsGame = {
 
 		crystalsGame.valueAddFromRuby = 0;
 		crystalsGame.valueAddFromDiamond = 0;
-		crystalsGame.valueAddFromTopaz = 0;
+		crystalsGame.valueAddFromAmber = 0;
 		crystalsGame.valueAddFromEmerald = 0;
 
 		$("#numGenerated").text("0");
@@ -69,8 +69,8 @@ var crystalsGame = {
 		console.log(crystalsGame.valueAddFromRuby);
 		crystalsGame.valueAddFromDiamond = Math.floor(Math.random() * 12) + 1;
 		console.log(crystalsGame.valueAddFromDiamond);
-		crystalsGame.valueAddFromTopaz = Math.floor(Math.random() * 12) + 1;
-		console.log(crystalsGame.valueAddFromTopaz);
+		crystalsGame.valueAddFromAmber = Math.floor(Math.random() * 12) + 1;
+		console.log(crystalsGame.valueAddFromAmber);
 		crystalsGame.valueAddFromEmerald = Math.floor(Math.random() * 12) + 1;
 		console.log(crystalsGame.valueAddFromEmerald);
 
@@ -92,8 +92,8 @@ var crystalsGame = {
 		crystalsGame.determineContest(crystalsGame.targetSum, crystalsGame.playerSum);
 	},
 
-	topaz: function(){
-		crystalsGame.playerSum += crystalsGame.valueAddFromTopaz;
+	amber: function(){
+		crystalsGame.playerSum += crystalsGame.valueAddFromAmber;
 		$("#sumNumsEntered").text(crystalsGame.playerSum);
 		crystalsGame.determineContest(crystalsGame.targetSum, crystalsGame.playerSum);
 	},
@@ -129,11 +129,11 @@ var crystalsGame = {
 
 	determineContest: function(tSum, pSum){
 		if(tSum === pSum){
-		alert("Player Wins");
+		setTimeout(alert("Player Wins"), 2000);
 		crystalsGame.winsCounter++;
 		crystalsGame.wrapUpGame();
 		} else if(tSum < pSum){
-			alert("Player Loses");
+			setTimeout(alert("Player Loses"), 2000);
 			crystalsGame.lossesCounter++;
 			crystalsGame.wrapUpGame();
 		} else {
@@ -152,6 +152,4 @@ var crystalsGame = {
 }; //end of crystalsGame object
 
 
-
-//Do we need to have crystal value displayed on each crystal when presssed?  Per the assignment video, apparently not.
 
